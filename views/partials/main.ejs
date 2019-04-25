@@ -1,0 +1,87 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Shop Immersives</h1>
+  <p class="lead">Best Shopping App</p>
+
+    <section class="jumbotron text-center">
+    <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="inputHelp">Search Product</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control input-lg" id="search" aria-describedby="instantSearch" placeholder="Search" name="search_term" />
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+          </div>
+        </form>
+    </div>
+  </section>
+
+</div>
+
+<div class="container">
+  <div>
+
+    <div class="card-deck mb-3 text-center" id='productSearchResults'>
+
+      <% for(let i = 0; i < products.length; i++) {   %>
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="<%= products[i].image %>" alt="Card image cap" />
+      <div class="card-body">
+          <h5 class="card-title"><%= products[i].name %></h5>
+          <a href="/api/product/<%= products[i]._id %>" >
+            <button class="btn btn-primary">Shop Now</button>
+          </a>
+        </div>
+      </div>
+    <% } %> 
+    </div>
+    
+    </div>
+
+
+  </div>
+
+  <nav aria-label="..." class="d-flex justify-content-center" >
+  <ul class="pagination">
+
+    <% if (current === 1 || isNaN(current)) { %>
+      <li class="page-item disabled">
+         <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+    <% } else { %>
+      <li class="page-item">
+         <a class="page-link" href="/page/<%= Number(current) - 1 %>" tabindex="-1">Previous</a>
+      </li>
+    <% } %>  
+  
+
+
+    <% for (let i = 1; i <= pages; i++) { %>
+
+      <% if ( i === current ) { %>
+        <li class="page-item disabled">
+          <a class="page-link" href="/page/<%= i %>"><%= i %></a>
+        </li>
+      <%  } else { %>
+      <li class="page-item">
+        <a class="page-link" href="/page/<%= i %>"><%= i %></a>
+      </li>
+      <% } %>
+    <% } %>
+
+
+      <% if (current === (pages)) { %>
+      <li class="page-item disabled">
+         <a class="page-link" href="#" tabindex="-1">Next</a>
+      </li>
+    <% } else { %>
+      <li class="page-item">
+         <a class="page-link" href="/page/<%= Number(current) + 1 %>" tabindex="-1">Next</a>
+      </li>
+    <% } %>  
+  
+  </ul>
+</nav>

@@ -1,0 +1,32 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Shop Immersives</h1>
+  <p class="lead">Best Shopping App</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+
+
+    <% for(let i = 0; i < products.length; i++) {   %>
+
+      <div class="card" style="width: 18rem;">
+          
+          <img class="card-img-top" src="<%= products[i].image %>" alt="Card image cap" />
+      
+      <div class="card-body">
+          
+          <h5 class="card-title"><%= products[i].name %></h5>
+
+          <a href="/api/product/<%= products[i]._id %>" >
+            
+            <button class="btn btn-primary">Shop Now</button>
+
+          </a>
+
+        </div>
+
+      </div>
+    <% } %> 
+
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <% include ../partials/account %>
+
+   <body class="text-center">
+
+
+     <form class="form-signin" method="POST" action="/api/admin/add-category">
+
+       <% if (errors.length > 0) { %>
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               <%= errors %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+           </div>
+       <% } %>
+
+       <% if (message.length > 0) { %>
+         <div class="alert alert-primary alert-dismissible fade show" role="alert">
+               <%= message %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+           </div>
+       <% } %>
+
+       <h1 class="h3 mb-3 font-weight-normal">Add Category</h1>
+
+       <label for="inputEmail" class="sr-only">Name: </label>
+       <input type="text" id="inputEmail" class="form-control" placeholder="Category" name="name">
+
+
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Add Category</button>
+       <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+     </form>
+
+ </body>
+</html>
