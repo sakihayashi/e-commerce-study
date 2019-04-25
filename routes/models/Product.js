@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 var mongoosatic = require('mongoosastic');
 
-let elasticSearchENV = process.env.BONSAI_URL || 'localhost:92000';
+let elasticSearchENV = process.env.BONSAI_URL || 'localhost:9200';
 
 var ProductSchema = new mongoose.Schema({
     category: {
