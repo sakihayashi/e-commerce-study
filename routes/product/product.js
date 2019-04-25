@@ -27,7 +27,7 @@ stream.on('close', function() {
 
 stream.on('error', function(error) {
     console.log(error);
-})
+});
 
 router.get('/', function(req, res, next) {
     res.render('product/product')
