@@ -5,12 +5,10 @@ var productController = require('./product/controllers/productController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
+  console.log('req object: ', req);
+  
   productController.getAllProducts({})
                    .then( products => {
-
-                  
-
 
                     res.render('index', {
                       products: products.products,
