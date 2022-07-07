@@ -21,7 +21,7 @@
     "heroku": "^7.22.10",
     "http-errors": "~1.6.2",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoosastic": "^4.4.1",
     "mongoose": "^5.5.0",
     "morgan": "~1.9.0",
